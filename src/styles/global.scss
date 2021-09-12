@@ -2,11 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 :root {
   --white: #fff;
   --gray: #494D4B;
+  --bright-gray: #EEEEEE;
+  --black: #1D1b26;
+}
+
+body {
+  background-color: var(--bright-gray);
 }
 
 button {

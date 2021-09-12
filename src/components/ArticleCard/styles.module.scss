@@ -30,6 +30,11 @@
    .cardFooter {
      display: flex;
      justify-content: space-between;
+     a {
+      text-decoration: none;
+      color: var(--gray);
+      border-bottom: var(--gray) 0.125em solid;
+     }
    }
 
   }

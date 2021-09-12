@@ -11,7 +11,6 @@ type ArticleCardProps = {
 export default function ArticleCard({
   article: { authors, link, media, publishedDate, summary, title }
 }: ArticleCardProps): JSX.Element {
-  const authorText = authors.length === 1 ? authors[0] : authors.join(', ')
   return (
     <div className={styles.articleCard}>
       <a href={link} target="_blank" rel="noreferrer">
@@ -36,7 +35,7 @@ export default function ArticleCard({
         />
         <div className={styles.cardFooter}>
           <span>{publishedDate.toLocaleDateString()}</span>
-          <span>{authorText && authorText}</span>
+          <span>{authors[0]}</span>
           <a href={link} target="_blank" rel="noreferrer">
             Leia mais
           </a>
