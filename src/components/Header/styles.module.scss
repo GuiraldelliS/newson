@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1% 5% 1% 5%;
+  background-color: var(--bright-gray)
+}
+
+.topics {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  ul {
+    list-style-type: none;
+    li {
+      display: inline;
+      margin-left: 5rem;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray);
+    }
+  }
+}
