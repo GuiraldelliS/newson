@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 import { NewsType } from '../types/news.type'
+import { randomTopic } from '../utils/topics'
 
 const apiKey = process.env.REACT_APP_API_KEY
 
@@ -13,7 +14,7 @@ const api = axios.create({
 })
 
 export const getNews = async (
-  q = process.env.REACT_APP_DEFAULT_QUERY,
+  q = randomTopic(),
   page = 1,
   pageSize = 12,
   lang = 'pt'
@@ -29,7 +30,7 @@ export const getNews = async (
     totalPages: data.total_pages,
     articles: data.articles.map((article: any) => {
       return {
-        id: article.id,
+        id: article._id,
         title: article.title,
         summary: article.summary,
         link: article.link,
