@@ -1,0 +1,11 @@
+.search {
+  display: flex;
+
+  input[type="text"] {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--black);
+    background-color: var(--light-gray);
+    width: 25rem;
+  }
+}
