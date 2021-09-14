@@ -2,11 +2,19 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 30px;
-  padding: 0 2%;
+  margin: 2%;
 }
 
-.pagination {
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+}
+
+.center {
   display: grid;
   justify-items: center;
-  padding: 2%;
+  padding: 0 2%;
 }

@@ -5,5 +5,5 @@ export type NewsType = {
   pageSize: number
   status: string
   totalPages: number
-  articles: ArticleType[]
+  articles: ArticleType[] | undefined
 }

@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 import { NewsType } from '../types/news.type'
-import { randomTopic } from '../utils/topics'
 
 const apiKey = process.env.REACT_APP_API_KEY
 
@@ -14,7 +13,7 @@ const api = axios.create({
 })
 
 export const getNews = async (
-  q = randomTopic(),
+  q: string,
   page = 1,
   pageSize = 15,
   lang = 'pt'
@@ -28,17 +27,20 @@ export const getNews = async (
     page: data.page,
     pageSize: data.page_size,
     totalPages: data.total_pages,
-    articles: data.articles.map((article: any) => {
-      return {
-        id: article._id,
-        title: article.title,
-        summary: article.summary,
-        link: article.link,
-        media: article.media,
-        authors: article.authors,
-        publishedDate: new Date(article.published_date)
-      }
-    })
+    articles:
+      data.articles === undefined
+        ? undefined
+        : data.articles.map((article: any) => {
+            return {
+              id: article._id,
+              title: article.title,
+              summary: article.summary,
+              link: article.link,
+              media: article.media,
+              authors: article.authors,
+              publishedDate: new Date(article.published_date)
+            }
+          })
   }
 
   return news

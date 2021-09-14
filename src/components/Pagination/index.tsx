@@ -17,6 +17,7 @@ export function Pagination({
   setPage
 }: PaginationProps): JSX.Element {
   const first = Math.max(page - MAX_LEFT, 1)
+
   return (
     <ul className={styles.pagination}>
       <li>
