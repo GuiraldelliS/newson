@@ -1,5 +1,4 @@
 import React from 'react'
-import LinesEllipsis from 'react-lines-ellipsis'
 
 import { ArticleType } from '../../types/article.type'
 import styles from './styles.module.scss'
@@ -25,22 +24,10 @@ export function ArticleCard({
         <img src={media} alt={title} />
       </a>
       <div className={styles.content}>
-        <LinesEllipsis
-          text={title}
-          maxLine="1"
-          ellipsis="..."
-          trimRight
-          basedOn="letters"
-          component="h2"
-        />
-        <LinesEllipsis
-          text={summary}
-          maxLine="5"
-          ellipsis="..."
-          trimRight
-          basedOn="letters"
-          component="p"
-        />
+        <div className={styles.text}>
+          <h2>{title}</h2>
+          <p>{summary}</p>
+        </div>
         <div className={styles.cardFooter}>
           <span>{publishedDate.toLocaleDateString()}</span>
           <span>{authors[0] && getAuthorText(authors)}</span>
