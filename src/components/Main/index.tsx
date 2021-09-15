@@ -28,7 +28,6 @@ export default function Main(): JSX.Element {
         searchContextState === '' ? 'Tecnologia' : searchContextState,
         pageNumber
       ).then((response) => {
-        console.log(response)
         setNews(response)
         setLoading(false)
       })
@@ -42,6 +41,7 @@ export default function Main(): JSX.Element {
       prevContextState.current = searchContextState
       handleLoadNews(1)
       setPage(1)
+      return
     }
     handleLoadNews(page)
   }, [page, searchContextState])

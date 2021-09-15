@@ -21,7 +21,10 @@ export function Pagination({
   return (
     <ul className={styles.pagination}>
       <li>
-        <button onClick={() => setPage(page - 1)}> Anterior </button>
+        <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+          {' '}
+          Anterior{' '}
+        </button>
       </li>
       {Array.from({ length: Math.min(MAX_ITEMS, totalPages) })
         .map((_, index) => index + first)
@@ -36,7 +39,13 @@ export function Pagination({
           </li>
         ))}
       <li>
-        <button onClick={() => setPage(page + 1)}> Próxima </button>
+        <button
+          onClick={() => setPage(page + 1)}
+          disabled={page === totalPages}
+        >
+          {' '}
+          Próxima{' '}
+        </button>
       </li>
     </ul>
   )
